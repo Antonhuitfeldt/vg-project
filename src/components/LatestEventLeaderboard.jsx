@@ -18,26 +18,28 @@ ChartJS.register(
     Legend
   );
   
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Tävlingens namn',
-      },
-    },
-    scales: { 
-      y: {
-        reverse: true
-      }
-    }
-  };
   
-  const LatestEventLeaderboard = ({ leaderboard }) => {
+  
+  const LatestEventLeaderboard = ({ leaderboard, eventTitle }) => {
     if (!leaderboard) return <p>Loading...</p>
+    
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: eventTitle,
+        },
+      },
+      scales: { 
+        y: {
+          reverse: true
+        }
+      }
+    };
     
     const top10 = leaderboard.leaderboardRows.slice(0, 10)
     const labels = top10.map(p => [p.firstName + ' ' + p.lastName, p.position])

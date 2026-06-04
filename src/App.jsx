@@ -7,6 +7,7 @@ import './App.css'
 
 const App = () => {
   const [leaderboard, setLeaderboard] = useState(null)
+  const [eventTitle, setEventTitle] = useState('')
 
   useEffect(() => {
     const getLatestEvent = async () => {
@@ -21,9 +22,13 @@ const App = () => {
         }
       }
 
+
       const latestEvent = pastEvents[pastEvents.length - 1]
       const leaderboardData = await getLeaderboard(latestEvent.tournId)
       setLeaderboard(leaderboardData)
+
+      const eventTitle = latestEvent.name
+      setEventTitle(eventTitle)
     }
 
     getLatestEvent()
@@ -34,7 +39,9 @@ const App = () => {
   return (
     <div>
       <Hero />
-      <LatestEventLeaderboard leaderboard={leaderboard}/>
+      <LatestEventLeaderboard 
+        leaderboard={leaderboard}
+        eventTitle={eventTitle}/>
     </div>
   )
 }
