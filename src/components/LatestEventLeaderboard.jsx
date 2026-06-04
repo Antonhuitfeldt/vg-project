@@ -55,7 +55,7 @@ ChartJS.register(
     ],
   };
   
-  const LatestEventLeaderBoard = () => {
+  const LatestEventLeaderboard = ({ leaderboard }) => {
     return(
         <div id="leaderboard" className='w-5/6 mx-auto p-10'>
             <Bar options={options} data={data} />
@@ -63,5 +63,5 @@ ChartJS.register(
     );
   };
 
-export default LatestEventLeaderBoard
+export default LatestEventLeaderboard
   
