@@ -57,7 +57,7 @@ ChartJS.register(
   
   const LatestEventLeaderBoard = () => {
     return(
-        <div className='w-5/6 mx-auto p-10'>
+        <div id="leaderboard" className='w-5/6 mx-auto p-10'>
             <Bar options={options} data={data} />
         </div>
     );
