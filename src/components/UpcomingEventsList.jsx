@@ -1,4 +1,4 @@
-export const UpcomingEventsList = ({schedule}) => {
+const UpcomingEventsList = ({schedule}) => {
   return (
     <div className="mx-auto max-w-3xl px-6" id="upcoming-events">
         <h2 className="flex justify-center text-3xl font-semibold tracking-tight text-gray-900 m-8">Upcoming Events in 2026</h2>
@@ -20,4 +20,5 @@ export const UpcomingEventsList = ({schedule}) => {
     </div>
   );
 }
+export default UpcomingEventsList
   
