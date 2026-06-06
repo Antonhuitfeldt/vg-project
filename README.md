@@ -1,16 +1,55 @@
-# React + Vite
+# Golf Tournament Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  A small web application that visualizes statistics from the PGA Tour's latest
+  finished tournament with leaderboard, prize money and player earnings, and lists
+  upcoming events for the season.
 
-Currently, two official plugins are available:
+  ## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+  - Leaderboard for the latest finished tournament
+  - Tournament info (winner's share, FedEx Cup points, total purse)
+  - Player earnings, either as pie chart or line chart
+  - List of upcoming events for the current year
 
-## React Compiler
+  ## Built with
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  - React - (https://react.dev/) + Vite — application framework and build tool
+  - Chart.js - (https://www.chartjs.org/) (via `react-chartjs-2`) — data visualization
+  - Anime.js - (https://animejs.com/) — animations
+  - Axios - (https://axios-http.com/) — HTTP requests
+  - Tailwind CSS - (https://tailwindcss.com/) — styling
 
-## Expanding the ESLint configuration
+  ## API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  Live Golf Data API - (https://rapidapi.com/slashgolf/api/live-golf-data)
+  You need your own API key to run the project.
+
+  ## Getting started
+
+  ### Prerequisites
+
+  - Node.js - (https://nodejs.org/) (version 18 or later)
+  - A free RapidAPI account with a key for the Live Golf Data API
+
+  ### Installation
+
+  1. Clone the repository:
+
+  2. Install dependencies:
+     ```bash
+     npm install
+     ```
+
+  3. Create a `.env` file in the project root and add your API key:
+     ```env
+     VITE_RAPIDAPI_KEY=your_api_key_here
+     ```
+
+  4. Start the development server:
+     ```bash
+     npm run dev
+     ```
+
+  ## Author
+
+  - Anton Huitfeldt
