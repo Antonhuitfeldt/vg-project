@@ -1,4 +1,3 @@
-//Hero komponenten som visas som första sida för användare, finns en titel, förklarande text och två knappar.
 import { animate } from 'animejs';
 
 const Hero = () => {
