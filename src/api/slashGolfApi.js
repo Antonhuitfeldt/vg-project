@@ -49,7 +49,28 @@ export const getLeaderboard = async (tournId) => {
 }
 }
 
-
+export const getEarnings = async (tournId) => {
+    const options = {
+        method: 'GET',
+        url: 'https://live-golf-data.p.rapidapi.com/earnings',
+        params: {
+          tournId: tournId,
+          year: '2026'
+        },
+        headers: {
+          'x-rapidapi-key': apiKey,
+          'x-rapidapi-host': 'live-golf-data.p.rapidapi.com',
+          'Content-Type': 'application/json'
+        }
+      };
+      
+      try {
+          const response = await axios.request(options);
+          return response.data;
+      } catch (error) {
+          console.error(error);
+      }
+}
 
 
 

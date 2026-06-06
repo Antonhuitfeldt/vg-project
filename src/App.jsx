@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import LatestEventLeaderboard from './components/LatestEventLeaderboard'
 import { TournamentInfo } from './components/TournamentInfo'
 import { UpcomingEventsList } from './components/UpcomingEventsList'
-import { getSchedule, getLeaderboard } from './api/slashGolfApi'
+import { getSchedule, getLeaderboard, getEarnings } from './api/slashGolfApi'
 import './App.css'
 
 
@@ -12,6 +12,7 @@ const App = () => {
   const [eventTitle, setEventTitle] = useState('')
   const [latestEvent, setLatestEvent] = useState(null)
   const [schedule, setSchedule] = useState([])
+  const [earnings, setEarnings] = useState(null)
 
   useEffect(() => {
     const getLatestEvent = async () => {
@@ -39,6 +40,9 @@ const App = () => {
       const latestEvent = pastEvents[pastEvents.length - 1]
       setLatestEvent(latestEvent)
       
+      const earnings = getEarnings(latestEvent.tournId)
+      setEarnings(earnings)
+
       const leaderboardData = await getLeaderboard(latestEvent.tournId)
       setLeaderboard(leaderboardData)
 
