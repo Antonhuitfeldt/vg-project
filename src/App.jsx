@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import LatestEventLeaderboard from './components/LatestEventLeaderboard'
 import { TournamentInfo } from './components/TournamentInfo'
 import { UpcomingEventsList } from './components/UpcomingEventsList'
-import PlayerEarnings from './components/PlayerEarnings'
+import EarningsChart from './components/PlayerEarningCharts/EarningsChart'
 import { getSchedule, getLeaderboard, getEarnings } from './api/slashGolfApi'
 import './App.css'
 
@@ -53,8 +53,6 @@ const App = () => {
     getLatestEvent()
   }, [])
 
-
-
   return (
     <div>
       <Hero />
@@ -65,7 +63,7 @@ const App = () => {
       <TournamentInfo 
         latestEvent={latestEvent} 
       />
-      <PlayerEarnings 
+      <EarningsChart 
         earnings={earnings}
         eventTitle={eventTitle}
       />
