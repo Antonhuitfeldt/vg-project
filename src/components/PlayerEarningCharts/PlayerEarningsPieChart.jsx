@@ -7,12 +7,8 @@ const PlayerEarningsPieChart = ({ earnings, eventTitle, onSwitch }) => {
     if (!earnings) return <p>Loading...</p>
 
     const top10 = earnings.leaderboard.slice(0, 10);
-    const others = earnings.leaderboard.slice(10);
-    const othersTotal = others.reduce((sum, player) => sum + player.earnings, 0);
     const labels = top10.map(p => p.firstName + ' ' + p.lastName);
-    labels.push('Rest of the players');
     const earningsData = top10.map(p => p.earnings);
-    earningsData.push(othersTotal);
 
     const data = {
         labels: labels,
@@ -31,7 +27,6 @@ const PlayerEarningsPieChart = ({ earnings, eventTitle, onSwitch }) => {
             'rgba(54, 162, 235, 0.2)',
             'rgba(255, 206, 86, 0.2)',
             'rgba(75, 192, 192, 0.2)',
-            'rgba(100, 100, 100, 0.2)',
             ],
             borderWidth: 1,
           },
