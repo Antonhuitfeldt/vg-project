@@ -2,9 +2,9 @@ const TournamentInfo = ({ latestEvent }) => {
   if (!latestEvent) return <p>Loading...</p>
 
   const stats = [
-      { id: 1, name: "winnersShare", value: '$ ' + latestEvent.winnersShare },
-      { id: 2, name: "fedexCupPoints", value: latestEvent.fedexCupPoints },
-      { id: 3, name: "totalPriceMoney", value: '$ ' + latestEvent.purse },
+      { id: 1, name: "Winners Share", value: '$ ' + latestEvent.winnersShare },
+      { id: 2, name: "FedExCup Points", value: latestEvent.fedexCupPoints },
+      { id: 3, name: "Total Price Money", value: '$ ' + latestEvent.purse },
   ]
   
   return (
