@@ -3,9 +3,9 @@ import Hero from './components/Hero'
 import LatestEventLeaderboard from './components/LatestEventLeaderboard'
 import { TournamentInfo } from './components/TournamentInfo'
 import { UpcomingEventsList } from './components/UpcomingEventsList'
+import PlayerEarnings from './components/PlayerEarnings'
 import { getSchedule, getLeaderboard, getEarnings } from './api/slashGolfApi'
 import './App.css'
-
 
 const App = () => {
   const [leaderboard, setLeaderboard] = useState(null)
@@ -40,7 +40,7 @@ const App = () => {
       const latestEvent = pastEvents[pastEvents.length - 1]
       setLatestEvent(latestEvent)
       
-      const earnings = getEarnings(latestEvent.tournId)
+      const earnings = await getEarnings(latestEvent.tournId)
       setEarnings(earnings)
 
       const leaderboardData = await getLeaderboard(latestEvent.tournId)
@@ -65,6 +65,13 @@ const App = () => {
       <TournamentInfo 
         latestEvent={latestEvent} 
       />
+      <PlayerEarnings 
+        earnings={earnings}
+        eventTitle={eventTitle}
+      />
+
+      <hr className='max-w-8/10 mx-auto'/>
+
       <UpcomingEventsList 
         schedule={schedule}
       />
